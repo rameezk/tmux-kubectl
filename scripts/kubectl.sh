@@ -2,6 +2,7 @@
 
 get_current_context() {
     value=$(kubectl config current-context)
+    value="test"
     echo "$value"
 }
 
