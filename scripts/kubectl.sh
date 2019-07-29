@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 get_current_context() {
-    current_context=$(kubectl config current-context)
+    current_context="$(kubectl config current-context 2>/dev/null)"
     echo "$current_context"
 }
 
