@@ -2,6 +2,7 @@
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+kubectl_value="#($CURRENT_DIR/scripts/kubectl.sh)"
 kubectl_context_interpolation_string="\#{kubectl_context}"
 
 source $CURRENT_DIR/scripts/kubectl.sh
@@ -25,7 +26,7 @@ set_tmux_option() {
 
 do_interpolation() {
 	  local string="$1"
-	  local interpolated="${string/$kubectl_context_interpolation_string}"
+	  local interpolated="${string/$kubectl_context_interpolation_string/$kubectl_value}"
 	  echo "$interpolated"
 }
 
