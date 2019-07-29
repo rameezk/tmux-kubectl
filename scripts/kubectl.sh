@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
 get_current_context() {
-    value=$(kubectl config current-context)
-    value="test"
-    echo "$value"
+    current_context=$(kubectl config current-context)
+    echo "$current_context"
 }
 
 get_current_namespace() {
-    echo "not_implemented"
+    echo ""
 }
 
 main() {
