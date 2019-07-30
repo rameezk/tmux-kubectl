@@ -5,8 +5,6 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 kubectl_value="#($CURRENT_DIR/scripts/kubectl.sh)"
 kubectl_context_interpolation_string="\#{kubectl_context}"
 
-source $CURRENT_DIR/scripts/kubectl.sh
-
 get_tmux_option() {
 	  local option=$1
 	  local default_value=$2

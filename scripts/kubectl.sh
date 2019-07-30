@@ -6,14 +6,18 @@ get_current_context() {
 }
 
 get_current_namespace() {
-    echo ""
+    echo "N/A"
 }
 
 main() {
     context="$(get_current_context)"
     namespace="$(get_current_namespace)"
 
-    echo "$context:$namespace"
+    if [[ -z $namespace ]]; then
+        echo "$context"
+    else
+        echo "$context:$namespace"
+    fi
 }
 
 main
