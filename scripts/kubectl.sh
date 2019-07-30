@@ -6,7 +6,8 @@ get_current_context() {
 }
 
 get_current_namespace() {
-    echo "N/A"
+    current_namespace="$(kubectl config view --minify --output 'jsonpath={..namespace}')"
+    echo "$current_namespace"
 }
 
 main() {
